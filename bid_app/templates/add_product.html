@@ -1,0 +1,134 @@
+{% extends 'index.html' %}
+{% block body %}
+{% load static %}
+<style>
+    .title {
+        text-align: center;
+        margin-top: 40px;
+        position: relative;
+        line-height: 60px;
+    }
+    .title::after {
+        content: '';
+        background: #ff523b;
+        width: 80px;
+        height: 5px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+</style>
+<div class="container" style="background:white">
+    <h3 class="title">Add Product</h3>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="container-fluid" style="width:90%;margin-top:2%">
+        <form method="post" action="" id="indexForm" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="category">Select Category</label>
+                        <select class="form-control" id="category" name="category" required>
+                            <option value="">---select Category---</option>
+                            {% for i in categories %}
+                                <option value="{{ i.id }}">{{ i.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="auction_type">Select Auction Type</label>
+                        <select class="form-control" id="auction_type" name="auction_type" onchange="changemxmin()" required>
+                            <option value="">---select Auction Type---</option>
+                            <option value="Auction">Auction</option>
+                            <option value="Tendor">Tendor</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="product_name">Product Name</label>
+                        <input type="text" class="form-control" placeholder="Enter product Name" id="product_name" name="product_name" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label id="auction_label">Base Price</label>
+                        <input type="number" class="form-control" id="base_price" name="base_price" required>
+                    </div>
+                </div>
+            </div>
+
+          
+
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="quantity">Quantity (Kg)</label>
+                        <input type="number" class="form-control" placeholder="Enter quantity" id="quantity" name="quantity" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="image">Product Image</label>
+                        <input type="file" class="form-control" id="image" name="image" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="start_session_date">Start Session Date:</label>
+                        <input type="datetime-local" class="form-control" id="start_session_date" name="start_session_date" required />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="end_session_date"> End Session Date:</label>
+                        <input type="datetime-local" class="form-control" id="end_session_date" name="end_session_date" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" name="description" placeholder="Write product description" required></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div align="center">
+                <button type="submit" style="width:100%;margin-bottom:15%;" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function changemxmin() {
+        var data = document.getElementById('auction_type').value;
+        if (data == "Tendor") {
+            document.getElementById('auction_label').innerHTML = "Maximum Price";
+        } else {
+            document.getElementById('auction_label').innerHTML = "Base Price";
+        }
+    }
+</script>
+
+{% endblock %}

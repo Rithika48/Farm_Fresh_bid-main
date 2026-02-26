@@ -1,0 +1,28 @@
+<!-- bid_app/templates/courses_dropdown_list_options.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category and Subcategory</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/your_script.js' %}"></script> <!-- Link to your JavaScript file -->
+</head>
+<body>
+
+    <h1>Select Category and Subcategory</h1>
+
+    <select id="programming">
+        <option value="">--- Select Category ---</option>
+        {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+        {% endfor %}
+    </select>
+
+   <!-- <select id="courses">
+        <option value="">--- Select Subcategory ---</option>
+        Subcategory options will be populated here 
+    </select> -->
+
+</body>
+</html>

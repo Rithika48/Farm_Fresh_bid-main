@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bid_app\static\css\style.css' %}"> <!-- Update with your actual CSS path -->
+    <style>
+        .cont {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .one {
+            width: 100%;
+            flex-basis: 50%;
+            flex-grow: 1;
+            background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(/static/images/netflix.png);
+            background-size: cover;
+            background-position: center;
+            min-height: inherit;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+        }
+        .two {
+            flex-basis: 50%;
+            flex-grow: 1;
+            padding: 50px 80px;
+        }
+        .logo {
+            width: 200px;
+            margin-bottom: 30px;
+        }
+        .one ul {
+            list-style: none;
+        }
+        .one ul li {
+            display: flex;
+            align-items: center;
+            margin: 12px 0;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.5s ease; /* Smooth transition */
+        }
+        .one ul li img {
+            width: 20px;
+            margin-right: 15px;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="file"], input[type="date"], textarea {
+            height: 40px;
+            width: 200px;
+            background: transparent;
+            padding: 7px 10px;
+            outline: none;
+            border: 1px solid #333;
+            border-radius: 4px;
+            margin: 12px 0;
+        }
+        form button {
+            background: #ff004f;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 30px;
+            margin: 20px 0;
+            border: 0;
+            outline: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        form button:hover {
+            transform: translateY(-5px);
+        }
+        .input-box {
+            display: flex;
+            align-items: center;
+            margin: 12px 0;
+        }
+        .form-check {
+            margin-right: 10px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar ul li {
+            margin: 0 15px;
+        }
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .navbar ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Farm Fresh Bid</h1>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="/admin/">Admin</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'signup' %}">Signup</a></li>
+        </ul>
+    </div>
+    <div class="cont">
+        <div class="one">
+            <h1 style="color:white;">Fram Fresh Bid Features</h1>
+            <ul id="featureList">
+                <li><img src="/static/images/icon.png">Convenience. Exposure.</li>
+                <li><img src="/static/images/icon.png">Auction anywhere.</li>
+                <li><img src="/static/images/icon.png">Instant engagement from marketing.</li>
+                <li><img src="/static/images/icon.png">Less onsite activity.</li>
+                <li><img src="/static/images/icon.png">Longer bidding window.</li>
+                <li><img src="/static/images/icon.png">Giant market. Larger Reach.</li>
+                <li><img src="/static/images/icon.png">Easy shipping.</li>
+                <li><img src="/static/images/icon.png">Instant Trust.</li>
+            </ul>
+        </div>
+        <div class="two">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <ul class="formlist">
+                    <li class="fields">
+                        <div class="input-box">
+                            <input name="fname" type="text" id="txtFirstName" class="textbox" size="50" placeholder="First Name" required />
+                        </div>
+                        <div class="input-box">
+                            <input name="lname" type="text" id="txtLastName" class="textbox" placeholder="Last Name" required />
+                        </div>
+                        <div class="input-box">
+                            <input name="uname" type="text" id="txtSUser Name" class="textbox" placeholder="Choose Username" required />
+                        </div>
+                        <div class="input-box">
+                            <input name="pwd" type="password" id="txtSPassword" class="textbox" placeholder="Choose Password" required />
+                        </div>
+                        <div class="input-box">
+                            <input name="email" type="email" id="txtEmailSignup" class="textbox" placeholder="Email ID" required />
+                        </div>
+                        <div class="input-box">
+                            <input name="contact" type="text" maxlength="10" id="txtMobileSignup" class="textbox" placeholder="Mobile" required />
+                        </div>
+                        <div class="input-box">
+                            <input name="image" type="file" id="txtImage" class="form-control" placeholder="Image" />
+                        </div>
+                        <div class="input-box">
+                            <input name="dob" type="date" id="txtDOB" class="form-control" placeholder="Date of Birth" required />
+                        </div>
+                        <div class="input-box">
+                            <input name="reg" type="radio" id="bidder" class="form-check" value="Bidder" required /> 
+                            <label for="bidder">Bidder</label>
+                            <input name="reg" type="radio" id="seller" class="form-check" value="Seller" required /> 
+                            <label for="seller">Seller</label>
+                        </div>
+                        <div class="input-box">
+                            <textarea name="add" id="txtAddress" class="textbox" placeholder="Address" required></textarea>
+                        </div>
+                        <div class="input-box">
+                            <input id="chkChecked" type="checkbox" name="chkChecked" required /> 
+                            I accept the Terms and Conditions and the Privacy Policy of BidScape
+                        </div>
+                        <li class="actions">
+                            <button type="submit">Submit</button> 
+                        </li>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const features = document.querySelectorAll('#featureList li');
+        let index = 0;
+
+        function showFeature() {
+            if (index < features.length) {
+                features[index].style.opacity = 1; // Show feature
+                index++;
+                setTimeout(showFeature, 1000); // Show next feature after 1 second
+            }
+        }
+
+        window.onload = showFeature; // Start showing features when the page loads
+    </script>
+</body>
+</html>
