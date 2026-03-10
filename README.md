@@ -160,8 +160,124 @@ All data is generated dynamically during platform usage, including:
 
 - The data is securely stored in the PostgreSQL database.
 
+# How to Run
 
-## ⚙ How to Run the Project
-1️⃣ Clone the Repository
-      git clone https://github.com/yourusername/farm-fresh-bid.git
-      cd farm-fresh-bid
+### 1️. Clone the Repository
+
+```bash
+git clone https://github.com/Rithika48/Farm_Fresh_bid-main.git
+```
+
+### 2️. Navigate to the Project Folder
+
+```bash
+cd Farm_Fresh_bid-main
+```
+
+### 3️. Create a Virtual Environment
+
+```bash
+python -m venv env
+```
+
+Activate the environment
+
+Windows
+```bash
+env\Scripts\activate
+```
+
+Linux / Mac
+```bash
+source env/bin/activate
+```
+
+### 4️. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5️. Run Database Migrations
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### 6️. Create Admin User
+
+```bash
+python manage.py createsuperuser
+```
+
+### 7️. Run the Application
+
+```bash
+python manage.py runserver
+```
+
+### 8️. Open in Browser
+
+```
+http://127.0.0.1:8000
+```
+
+Admin Panel
+
+```
+http://127.0.0.1:8000/admin
+```
+
+# 📂 Project Structure
+
+```
+Farm-Fresh-Bid/
+│
+├── manage.py                     # Django management script
+├── requirements.txt              # Python dependencies
+├── README.md                     # Project documentation
+├── .gitignore                    # Files ignored by Git
+│
+├── config/                       # Main project configuration
+│   ├── __init__.py
+│   ├── settings.py               # Django settings
+│   ├── urls.py                   # Root URL configuration
+│   ├── asgi.py                   # ASGI configuration
+│   └── wsgi.py                   # WSGI configuration
+│
+├── apps/                         # Django applications
+│   └── bidding/
+│       ├── migrations/           # Database migrations
+│       ├── templates/            # HTML templates
+│       │   └── bidding/
+│       ├── static/               # Static files
+│       │   ├── css/
+│       │   ├── js/
+│       │   └── images/
+│       ├── admin.py              # Admin configuration
+│       ├── apps.py               # App configuration
+│       ├── models.py             # Database models
+│       ├── views.py              # Application views
+│       ├── urls.py               # App URLs
+│       └── forms.py              # Django forms
+│
+├── media/                        # Uploaded media files
+│
+├── static/                       # Global static files
+│
+└── templates/                    # Base templates
+```
+
+
+# 🚀 Future Improvements
+
+Secure online payment integration
+
+Email and SMS notifications
+
+Mobile application support
+
+Advanced analytics dashboard for farmers
+
+Multi-language support
