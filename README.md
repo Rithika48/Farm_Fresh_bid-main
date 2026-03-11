@@ -94,37 +94,43 @@ http://127.0.0.1:8000/admin
 
 ## 🏗 System Workflow
 Farmer → Upload Crop
-          ↓
-     Bidder → Place Bid
-          ↓
-       Farmer → Accept Bid
-          ↓
-        Transaction Completed
+         │
+         ▼
+
+Bidder → Place Bid
+         │
+         ▼
+ 
+Farmer → Accept Bid
+         │
+         ▼
+
+Transaction Completed
 
 
 ## 🛠 Tech Stack
 
 # Backend
+ 
+ - Python
 
-    - Python
-
-    - Django Framework
+ - Django Framework
     
 # Frontend
 
-    - HTML
+- HTML
 
-    - CSS
+- CSS
 
-    - JavaScript
+- JavaScript
 
 # Database
 
-    - PostgreSQL
+- PostgreSQL
 
 # Deployment
 
-    - Docker
+- Docker
 
 
 ## 🗄 Database
