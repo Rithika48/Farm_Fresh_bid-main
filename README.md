@@ -1,5 +1,12 @@
 # 🌾 Farm Fresh Bid: Bid For The Best
 
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Django](https://img.shields.io/badge/Django-Web%20Framework-green)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue)
+![Docker](https://img.shields.io/badge/Deployment-Docker-orange)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
+
 An online agricultural bidding platform where farmers and buyers connect through competitive bidding.
 
 The platform creates a transparent, fair, and efficient digital marketplace connecting farmers directly with buyers.
@@ -244,48 +251,6 @@ Admin Panel
 
 ```
 http://127.0.0.1:8000/admin
-```
-
----
-
-## 📂 Project Structure
-
-```
-Farm-Fresh-Bid/
-│
-├── manage.py
-├── requirements.txt
-├── README.md
-├── .gitignore
-│
-├── config/
-│   ├── __init__.py
-│   ├── settings.py
-│   ├── urls.py
-│   ├── asgi.py
-│   └── wsgi.py
-│
-├── apps/
-│   └── bidding/
-│       ├── migrations/
-│       ├── templates/
-│       │   └── bidding/
-│       ├── static/
-│       │   ├── css/
-│       │   ├── js/
-│       │   └── images/
-│       ├── admin.py
-│       ├── apps.py
-│       ├── models.py
-│       ├── views.py
-│       ├── urls.py
-│       └── forms.py
-│
-├── media/
-│
-├── static/
-│
-└── templates/
 ```
 
 ---
