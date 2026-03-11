@@ -257,7 +257,7 @@ http://127.0.0.1:8000/admin
 
 This GIF demonstrates the core workflow of the Farm Fresh Bid platform.
 
-![Farm_Fresh_bid-main-Demo](screenshots/demo.gif)
+![Farm_Fresh_bid-main-Demo](screenshots/demo7)
 
 ---
 
