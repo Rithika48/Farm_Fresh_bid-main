@@ -4,141 +4,146 @@ An online agricultural bidding platform where farmers and buyers connect through
 
 The platform creates a transparent, fair, and efficient digital marketplace connecting farmers directly with buyers.
 
+---
+
 ## ⚠ Problem Statement
 
 Farmers frequently face challenges in selling their produce due to:
 
-Dependence on middlemen
-
-Lack of transparency in crop pricing
-
-Limited market reach
-
-Unfair price negotiation
+- Dependence on middlemen
+- Lack of transparency in crop pricing
+- Limited market reach
+- Unfair price negotiation
 
 These issues reduce farmer profits and limit access to competitive markets.
 
 The objective of this project is to create a secure online bidding platform where farmers can list crops and buyers can place competitive bids, ensuring fair pricing and better market opportunities.
 
-## 📌 Project Description(Solution)
+---
 
-***Farm Fresh Bid: Bid For The Best*** is an online agricultural bidding platform developed to improve the way farmers sell their products. The system allows farmers to list their crops on the platform while buyers can place competitive bids to purchase them.
+## 📌 Project Description (Solution)
 
-This platform eliminates traditional intermediaries and creates a ***direct connection between farmers and buyers***, ensuring that farmers receive fair prices for their products.
+**Farm Fresh Bid: Bid For The Best** is an online agricultural bidding platform developed to improve the way farmers sell their products. The system allows farmers to list their crops on the platform while buyers can place competitive bids to purchase them.
 
-The application is built using the ***Django web framework*** with ***PostgreSQL*** as the database. The system includes three main roles: ***Farmer, Bidder, and Administrator***, each with specific functionalities that support the overall auction process.
+This platform eliminates traditional intermediaries and creates a **direct connection between farmers and buyers**, ensuring that farmers receive fair prices for their products.
 
-## Project Highlights
+The application is built using the **Django web framework** with **PostgreSQL** as the database. The system includes three main roles: **Farmer, Bidder, and Administrator**, each with specific functionalities that support the overall auction process.
 
-✅ Farmer-to-buyer direct marketplace
-✅ Secure bidding system
-✅ Admin verification for users
-✅ Real-time crop listings
-✅ PostgreSQL database integration
-✅ Built using Django framework
+---
 
+## ⭐ Project Highlights
 
-## 🖥 System Roles
+- ✅ Farmer-to-buyer direct marketplace  
+- ✅ Secure bidding system  
+- ✅ Admin verification for users  
+- ✅ Real-time crop listings  
+- ✅ PostgreSQL database integration  
+- ✅ Built using Django framework  
 
-# 👨‍🌾 Farmer
+---
+
+## 👥 System Roles
+
+### 👨‍🌾 Farmer
 
 Farmers can sell their crops using the bidding system.
 
-Features:
+**Features**
 
-Register and login
+- Register and login
+- Add crop details
+- Upload crop information
+- View bids from bidders
+- Accept the best bid
 
-Add crop details
+---
 
-Upload crop information
-
-View bids from bidders
-
-Accept the best bid
-
-# 💰 Bidder
+### 💰 Bidder
 
 Bidders compete to purchase farmer crops.
 
-Features:
+**Features**
 
-Register and login
+- Register and login
+- Browse available crops
+- Place bids
+- Track bidding activity
+- View bidding results
 
-Browse available crops
+---
 
-Place bids
-
-Track bidding activity
-
-View bidding results
-
-# 🛠 Admin
+### 🛠 Admin
 
 Admin manages and monitors the platform.
 
-Features:
+**Features**
 
-Approve farmer registrations
+- Approve farmer registrations
+- Approve bidder registrations
+- Manage crop listings
+- Monitor bids
+- Control platform activity
 
-Approve bidder registrations
+**Admin Panel**
 
-Manage crop listings
-
-Monitor bids
-
-Control platform activity
-
-Admin Panel:
-
+```
 http://127.0.0.1:8000/admin
+```
 
-## 🏗 System Workflow
+---
+
+## 🔄 System Workflow
+
+```
 Farmer → Upload Crop
          │
          ▼
-
 Bidder → Place Bid
          │
          ▼
- 
 Farmer → Accept Bid
          │
          ▼
-
 Transaction Completed
+```
 
+---
 
 ## 🛠 Tech Stack
 
-# Backend
- 
- - Python
+### Backend
 
- - Django Framework
-    
-# Frontend
+- Python
+- Django Framework
+
+### Frontend
 
 - HTML
-
 - CSS
-
 - JavaScript
 
-# Database
+### Database
 
 - PostgreSQL
 
-# Deployment
+### Deployment
 
 - Docker
 
+---
 
 ## 🗄 Database
 
-The application uses PostgreSQL to store all system data including users, crops, bids, and auction information.
+The application uses PostgreSQL to store all system data including:
 
-Example configuration in settings.py:
+- Users
+- Crops
+- Bids
+- Auction information
 
+Example configuration in `settings.py`:
+
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -149,6 +154,9 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+```
+
+---
 
 ## 📊 Dataset
 
@@ -157,30 +165,29 @@ This project does not require an external dataset.
 All data is generated dynamically during platform usage, including:
 
 - User registrations
-
 - Crop listings
-
 - Bidding activity
-
 - Auction results
 
-- The data is securely stored in the PostgreSQL database.
+The data is securely stored in the PostgreSQL database.
 
-# How to Run
+---
 
-### 1️. Clone the Repository
+## ▶️ How to Run
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Rithika48/Farm_Fresh_bid-main.git
 ```
 
-### 2️. Navigate to the Project Folder
+### 2. Navigate to the Project Folder
 
 ```bash
 cd Farm_Fresh_bid-main
 ```
 
-### 3️. Create a Virtual Environment
+### 3. Create a Virtual Environment
 
 ```bash
 python -m venv env
@@ -188,42 +195,46 @@ python -m venv env
 
 Activate the environment
 
-Windows
+**Windows**
+
 ```bash
 env\Scripts\activate
 ```
 
-Linux / Mac
+**Linux / Mac**
+
 ```bash
 source env/bin/activate
 ```
 
-### 4️. Install Dependencies
+### 4. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5️. Run Database Migrations
+### 5. Run Database Migrations
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 6️. Create Admin User
+### 6. Create Admin User
 
 ```bash
 python manage.py createsuperuser
 ```
 
-### 7️. Run the Application
+### 7. Run the Application
 
 ```bash
 python manage.py runserver
 ```
 
-### 8️. Open in Browser
+### 8. Open in Browser
+
+Main Application
 
 ```
 http://127.0.0.1:8000
@@ -235,55 +246,54 @@ Admin Panel
 http://127.0.0.1:8000/admin
 ```
 
-# 📂 Project Structure
+---
+
+## 📂 Project Structure
 
 ```
 Farm-Fresh-Bid/
 │
-├── manage.py                     # Django management script
-├── requirements.txt              # Python dependencies
-├── README.md                     # Project documentation
-├── .gitignore                    # Files ignored by Git
+├── manage.py
+├── requirements.txt
+├── README.md
+├── .gitignore
 │
-├── config/                       # Main project configuration
+├── config/
 │   ├── __init__.py
-│   ├── settings.py               # Django settings
-│   ├── urls.py                   # Root URL configuration
-│   ├── asgi.py                   # ASGI configuration
-│   └── wsgi.py                   # WSGI configuration
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
 │
-├── apps/                         # Django applications
+├── apps/
 │   └── bidding/
-│       ├── migrations/           # Database migrations
-│       ├── templates/            # HTML templates
+│       ├── migrations/
+│       ├── templates/
 │       │   └── bidding/
-│       ├── static/               # Static files
+│       ├── static/
 │       │   ├── css/
 │       │   ├── js/
 │       │   └── images/
-│       ├── admin.py              # Admin configuration
-│       ├── apps.py               # App configuration
-│       ├── models.py             # Database models
-│       ├── views.py              # Application views
-│       ├── urls.py               # App URLs
-│       └── forms.py              # Django forms
+│       ├── admin.py
+│       ├── apps.py
+│       ├── models.py
+│       ├── views.py
+│       ├── urls.py
+│       └── forms.py
 │
-├── media/                        # Uploaded media files
+├── media/
 │
-├── static/                       # Global static files
+├── static/
 │
-└── templates/                    # Base templates
+└── templates/
 ```
 
+---
 
-# 🚀 Future Improvements
+## 🚀 Future Improvements
 
-Secure online payment integration
-
-Email and SMS notifications
-
-Mobile application support
-
-Advanced analytics dashboard for farmers
-
-Multi-language support
+- Secure online payment integration
+- Email and SMS notifications
+- Mobile application support
+- Advanced analytics dashboard for farmers
+- Multi-language support
