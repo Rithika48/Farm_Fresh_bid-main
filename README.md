@@ -4,7 +4,6 @@
 ![Django](https://img.shields.io/badge/Django-Web%20Framework-green)
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue)
 ![Docker](https://img.shields.io/badge/Deployment-Docker-orange)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 
 An online agricultural bidding platform where farmers and buyers connect through competitive bidding.
